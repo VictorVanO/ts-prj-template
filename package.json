@@ -1,28 +1,59 @@
 {
-  "name": "ts_prj_template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
-    "eslint": "eslint \"./src/**\"",
-    "eslint:fix": "npm run eslint -- --fix",
-    "commit": "npx git-cz"
-  },
-  "author": "Van Olffen Victor",
-  "license": "MIT",
-  "dependencies": {
-    "simple-oauth2": "^5.0.0"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "eslint": "^8.38.0",
-    "eslint-config-standard-with-typescript": "^34.0.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.7.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "husky": "^8.0.3",
-    "typescript": "^5.0.4"
-  }
+    "name": "ts_prj_template",
+    "version": "1.0.2",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install",
+        "eslint": "eslint \"./src/**\"",
+        "eslint:fix": "npm run eslint -- --fix",
+        "commit": "npx git-cz --disable-emoji",
+        "build": "tsc -p .",
+        "release": "standard-version",
+        "license-report": "license-report --output=csv --csvHeaders > ./LICENSE-REPORT.csv",
+        "license": "license-checker --csv --production --out ./LICENSE.csv",
+        "patch": "npm run release -- --release-as patch",
+        "minor": "npm run release -- --release-as minor",
+        "major": "npm run release -- --release-as major",
+        "amend": "git commit --amend --no-edit",
+        "push": "git push --follow-tags origin main"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/VictorVanO/ts-prj-template"
+    },
+    "keywords": [
+        "xhr",
+        "http",
+        "ajax",
+        "promise",
+        "node"
+    ],
+    "author": "Van Olffen Victor",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/VictorVanO/ts-prj-template/issues"
+    },
+    "dependencies": {
+        "simple-oauth2": "^5.0.0",
+        "yui-lint": "^0.2.0"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.58.0",
+        "eslint": "^8.38.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-config-standard-with-typescript": "^34.0.1",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-n": "^15.7.0",
+        "eslint-plugin-promise": "^6.1.1",
+        "husky": "^8.0.3",
+        "prettier": "^2.8.7",
+        "standard-version": "^9.5.0",
+        "typescript": "^5.0.4"
+    },
+    "contributors": [
+        "Maillard Corentin (https://github.com/mzabriskie)",
+        "Mettioui Mourad"
+    ]
 }
